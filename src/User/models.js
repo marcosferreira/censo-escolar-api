@@ -1,8 +1,8 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import Joi from 'joi';
 
-const UserSchema = new Schema(
+const UserSchema = new mongoose.Schema(
   {
     firstname: {
       type: String,
@@ -43,7 +43,7 @@ UserSchema.methods.generateAuthToken = function () {
   return token;
 };
 
-const User = model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 function userValidate(user) {
   const schema = {

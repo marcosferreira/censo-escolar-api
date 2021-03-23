@@ -1,8 +1,8 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-import { User } from '../User/models';
+import { User } from '../User/models.js';
 
-const SchoolSchema = new Schema(
+const SchoolSchema = new mongoose.Schema(
   {
     schoolname: {
       type: String,
@@ -17,7 +17,7 @@ const SchoolSchema = new Schema(
       required: true,
     },
     user: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: User,
     },
   },
@@ -26,4 +26,4 @@ const SchoolSchema = new Schema(
   },
 );
 
-export const School = model('School', SchoolSchema);
+export const School = mongoose.model('School', SchoolSchema);

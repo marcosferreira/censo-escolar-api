@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { User } from './models';
+import { User } from './models.js';
 
 export async function auth(request, response, next) {
   const token = request.headers['x-access-token'] || request.headers['authorization'];

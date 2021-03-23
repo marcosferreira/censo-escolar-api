@@ -1,5 +1,5 @@
-import { CRUD } from '../Utils';
-import { Survey } from './models';
+import { CRUD } from '../Utils/index.js';
+import { Survey } from './models.js';
 
 export class SurveyController extends CRUD {
   constructor() {

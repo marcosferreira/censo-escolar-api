@@ -1,49 +1,27 @@
-import { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-import { User } from '../User/models';
+import { User } from '../User/models.js';
 
-const SurveySchema = new Schema(
+const SurveySchema = new mongoose.Schema(
   {
     district: {
       type: String,
       required: true,
     },
-    address: {
-      type: String,
-      required: true,
-    },
-    home_num: {
-      type: String,
-      required: true,
-    },
-    electrical_power_unit: {
+    schoolname: {
       type: String,
       required: true,
     },
     number_of_residents: {
-      type: Number,
+      type: String,
       required: true,
     },
-    residents: [
-      {
-        fullname: {
-          type: String,
-          required: true,
-        },
-        survey: [
-          {
-            label: {
-              type: String,
-            },
-            value: {
-              type: [String],
-            },
-          },
-        ],
-      },
-    ],
+    number_not_student: {
+      type: String,
+      required: true,
+    },
     user: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: User,
     },
   },
@@ -52,4 +30,4 @@ const SurveySchema = new Schema(
   },
 );
 
-export const Survey = model('Survey', SurveySchema);
+export const Survey = mongoose.model('Survey', SurveySchema);

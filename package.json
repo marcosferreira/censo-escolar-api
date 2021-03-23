@@ -2,15 +2,15 @@
   "name": "censo-escolar-api",
   "version": "1.0.0",
   "description": "API for web service Censo Escolar 2021",
-  "main": "./build/index.js",
+  "main": "./src/index.js",
   "repository": "https://github.com/marcosferreira/censo-escolar-api",
   "author": "Marcos Ferreira",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "(npm run build) & node .",
-    "dev": "nodemon src/index.js",
-    "build": "sucrase ./src -d ./build --transforms imports"
+    "start": "node .",
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -19,12 +19,11 @@
     "express": "^4.17.1",
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "5.11.15"
+    "mongoose": "^5.12.1"
   },
   "devDependencies": {
-    "eslint": "^7.20.0",
+    "eslint": "^7.22.0",
     "nodemon": "^2.0.7",
-    "prettier": "^2.2.1",
-    "sucrase": "^3.17.1"
+    "prettier": "^2.2.1"
   }
 }

@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 
-import { CRUD, validateCPF } from '../Utils';
-import { User } from './models';
+import { CRUD, validateCPF } from '../Utils/index.js';
+import { User } from './models.js';
 
 export class UserController extends CRUD {
   constructor() {
