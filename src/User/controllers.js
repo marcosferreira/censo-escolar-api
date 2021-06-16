@@ -9,7 +9,7 @@ export class UserController extends CRUD {
   }
 
   async index(request, response) {
-    const user = await User.findById(request.user._id).select('-password');
+    const user = await User.find().select('-password');
     return response.status(200).json(user);
   }
 
